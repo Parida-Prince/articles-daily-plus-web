@@ -1,135 +1,106 @@
-import { articles } from "../../../data/articles";
+import { dailyArticles } from "@/data/daily";
 
-export default async function ArticlePage({
+export default function ArticlePage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = await params;
-
-  const article = articles.find(
-    (a) => a.id === Number(id)
+  const article = dailyArticles.find(
+    (a) => a.id === Number(params.id)
   );
 
   if (!article) {
     return (
       <main className="min-h-screen bg-black text-white p-10">
-        Article not found.
+        <h1 className="text-3xl font-bold">Article not found.</h1>
       </main>
     );
   }
 
-  const paragraphs = article.content
-    .split("\n\n")
-    .filter((p) => p.trim() !== "");
-
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-16">
-      <div className="max-w-5xl mx-auto">
+    <main className="min-h-screen bg-black text-white px-6 py-14">
+      <div className="max-w-4xl mx-auto">
 
-        <div className="mb-6 flex items-center gap-4">
-
-          <span className="px-4 py-2 rounded-full bg-zinc-900 text-zinc-300 text-sm">
-            {article.category}
+        <div className="mb-6">
+          <span className="text-sm text-gray-400">
+            {article.category} • {article.readTime}
           </span>
-
-          <span className="text-zinc-500">
-            {article.readTime}
-          </span>
-
-          <span className="text-zinc-500">
-            Difficulty: {article.difficulty}
-          </span>
-
         </div>
 
-        <h1 className="text-7xl font-bold leading-tight mb-14">
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-12">
           {article.title}
         </h1>
 
-        <div className="border border-zinc-900 bg-zinc-950 rounded-3xl p-10 mb-14">
+        {/* FULL ARTICLE FIRST */}
+        <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 text-xl leading-[2.2rem] text-gray-200 whitespace-pre-line">
+          {article.content}
+        </div>
 
-          <div className="space-y-10">
+        {/* INSIGHTS SECTION */}
+        <div className="mt-16 space-y-8">
 
-            {paragraphs.map((paragraph, index) => (
-              <div key={index}>
+          <div className="grid md:grid-cols-2 gap-6">
 
-                <div className="flex items-center gap-3 mb-4">
+            <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+              <h2 className="text-3xl font-bold mb-4">
+                Author Tone
+              </h2>
 
-                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-sm text-zinc-400">
-                    P{index + 1}
+              <p className="text-gray-300 text-lg">
+                {article.tone}
+              </p>
+            </div>
+
+            <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+              <h2 className="text-3xl font-bold mb-4">
+                Central Idea
+              </h2>
+
+              <p className="text-gray-300 text-lg">
+                {article.centralIdea}
+              </p>
+            </div>
+
+          </div>
+
+          {/* PARA WISE MAIN IDEA */}
+          <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+            <h2 className="text-3xl font-bold mb-6">
+              Paragraph-wise Main Ideas
+            </h2>
+
+            <div className="space-y-5">
+              {article.paragraphSummary.map(
+                (point, index) => (
+                  <div
+                    key={index}
+                    className="border border-zinc-800 rounded-2xl p-5"
+                  >
+                    <p className="text-sm text-gray-500 mb-2">
+                      Paragraph {index + 1}
+                    </p>
+
+                    <p className="text-lg text-gray-300">
+                      {point}
+                    </p>
                   </div>
-
-                  <div className="h-px bg-zinc-800 flex-1" />
-
-                </div>
-
-                <p className="text-2xl leading-relaxed text-zinc-200">
-                  {paragraph}
-                </p>
-
-              </div>
-            ))}
-
+                )
+              )}
+            </div>
           </div>
 
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-
-          <div className="border border-zinc-900 bg-zinc-950 rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-5">
-              Author Tone
+          {/* CONCLUSION */}
+          <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+            <h2 className="text-3xl font-bold mb-4">
+              Conclusion
             </h2>
 
-            <p className="text-zinc-400 text-lg leading-relaxed">
-              {article.tone}
-            </p>
-          </div>
-
-          <div className="border border-zinc-900 bg-zinc-950 rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-5">
-              Central Idea
-            </h2>
-
-            <p className="text-zinc-400 text-lg leading-relaxed">
-              {article.summary}
+            <p className="text-lg text-gray-300 leading-8">
+              {article.conclusion}
             </p>
           </div>
 
         </div>
-
-        <div className="border border-zinc-900 bg-zinc-950 rounded-3xl p-8">
-
-          <h2 className="text-3xl font-bold mb-8">
-            Paragraph-wise Main Idea
-          </h2>
-
-          <div className="space-y-6">
-
-            {paragraphs.map((_, index) => (
-              <div
-                key={index}
-                className="border border-zinc-900 rounded-2xl p-6"
-              >
-
-                <h3 className="text-xl font-semibold mb-3">
-                  Paragraph {index + 1}
-                </h3>
-
-                <p className="text-zinc-400 leading-relaxed">
-                  Main idea explanation for paragraph {index + 1}.
-                  Replace this with actual paragraph summaries while
-                  uploading future articles.
-                </p>
-
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-
       </div>
     </main>
   );
