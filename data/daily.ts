@@ -1,13 +1,16 @@
 export const dailyArticles = [
   {
     id: 1,
+
     title: "The Psychology of Delayed Gratification",
+
     category: "Psychology",
+
     readTime: "6 min read",
+
     premium: false,
 
-    content: `
-Delayed gratification has long been considered one of the strongest predictors of future success.
+    content: `Delayed gratification has long been considered one of the strongest predictors of future success.
 
 The ability to resist immediate pleasure in favor of long-term rewards requires not only discipline but also psychological maturity.
 
@@ -29,8 +32,7 @@ Technology companies, meanwhile, increasingly monetize impulsive behavior. Notif
 
 As a result, cultivating patience has become not merely a personal virtue but a competitive advantage in modern society.
 
-The broader implication is that future success may increasingly depend on one's ability to protect attention from environments optimized for distraction.
-`,
+The broader implication is that future success may increasingly depend on one's ability to protect attention from environments optimized for distraction.`,
 
     tone: "Analytical and reflective",
 
@@ -38,26 +40,29 @@ The broader implication is that future success may increasingly depend on one's 
       "The passage explores how delayed gratification influences long-term success and why modern digital environments make patience increasingly difficult.",
 
     paragraphSummary: [
-      "Delayed gratification is linked with future success.",
-      "Modern digital systems weaken patience and self-control.",
-      "Long-term thinking historically benefits both societies and individuals.",
-      "Technology increasingly rewards impulsive behavior.",
-      "Patience has become a competitive advantage in modern life.",
+      "Delayed gratification predicts long-term success.",
+      "Modern digital systems reduce patience.",
+      "Long-term thinking benefits individuals and societies.",
+      "Technology monetizes impulsive behavior.",
+      "Patience has become a modern competitive advantage.",
     ],
 
     conclusion:
-      "The author concludes that the ability to resist immediate distractions and focus on long-term rewards is becoming increasingly valuable in today's attention-driven world.",
+      "The author concludes that the ability to resist immediate distractions and focus on long-term rewards is becoming increasingly valuable in modern society.",
   },
 
   {
     id: 2,
+
     title: "Why Attention Has Become the New Currency",
+
     category: "Technology",
+
     readTime: "7 min read",
+
     premium: true,
 
-    content: `
-In industrial economies, physical labor determined productivity. In digital economies, however, attention has emerged as the most valuable resource.
+    content: `In industrial economies, physical labor determined productivity. In digital economies, however, attention has emerged as the most valuable resource.
 
 Companies no longer compete merely for money; they compete for minutes, clicks, and psychological engagement.
 
@@ -75,8 +80,7 @@ Ironically, the individuals capable of deep focus are becoming disproportionatel
 
 The future workplace may therefore reward not multitasking, but rather the rare capacity for uninterrupted concentration.
 
-In this sense, attention is no longer simply a psychological faculty. It has become an economic asset.
-`,
+In this sense, attention is no longer simply a psychological faculty. It has become an economic asset.`,
 
     tone: "Critical and analytical",
 
@@ -84,14 +88,14 @@ In this sense, attention is no longer simply a psychological faculty. It has bec
       "The passage argues that attention has become the most valuable economic resource in digital societies.",
 
     paragraphSummary: [
-      "Digital economies prioritize attention over physical labor.",
-      "Social media platforms monetize engagement.",
-      "Algorithms encourage prolonged consumption.",
-      "Attention extraction has social consequences.",
-      "Deep focus is becoming economically valuable.",
+      "Digital economies prioritize attention.",
+      "Platforms monetize engagement.",
+      "Algorithms maximize retention.",
+      "Attention extraction affects society.",
+      "Deep focus is becoming valuable.",
     ],
 
     conclusion:
-      "The author concludes that attention is now an economic commodity and that individuals capable of sustained focus may hold a major advantage in future societies.",
+      "The author concludes that attention is now an economic commodity and sustained focus may become one of the most valuable skills in future societies.",
   },
 ];
