@@ -1,122 +1,89 @@
 import Link from "next/link";
-import { dailyArticles } from "../data/daily";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white px-6 py-16">
 
-      <section className="px-6 py-24">
-        <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto">
+
+        {/* HERO */}
+
+        <div className="mb-20">
 
           <div className="mb-6 inline-flex items-center gap-2 border border-zinc-800 rounded-full px-5 py-2 text-sm text-zinc-300">
-            🔥 1 Day Reading Streak
+            🔥 Daily CAT Reading Practice
           </div>
 
-          <h1 className="text-7xl font-bold leading-none tracking-tight max-w-5xl mb-8">
+          <h1 className="text-7xl font-bold leading-tight max-w-5xl mb-8">
             Train Your Reading Mind for CAT.
           </h1>
 
-          <p className="text-2xl text-zinc-400 leading-relaxed max-w-3xl mb-12">
-            Read carefully curated CAT-style passages,
-            understand tone and paragraph flow,
-            and build a powerful daily reading habit.
+          <p className="text-zinc-400 text-2xl leading-relaxed max-w-3xl mb-12">
+            Read carefully curated CAT-style passages with paragraph-wise insights,
+            author tone analysis, and structured comprehension breakdowns.
           </p>
 
           <div className="flex gap-4">
-            <Link href="/read">
-              <button className="bg-white text-black px-8 py-4 rounded-full text-lg font-medium">
-                Reading Library
+
+            <Link href="/library">
+              <button className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition">
+                Start Reading
               </button>
             </Link>
 
             <Link href="/pricing">
-              <button className="border border-zinc-700 px-8 py-4 rounded-full text-lg">
-                Go Premium
+              <button className="border border-zinc-700 px-8 py-4 rounded-full text-lg hover:bg-zinc-900 transition">
+                View Plans
               </button>
             </Link>
-          </div>
-
-        </div>
-      </section>
-
-      <section className="px-6 pb-24">
-        <div className="max-w-6xl mx-auto">
-
-          <div className="flex items-center justify-between mb-10">
-            <div>
-              <h2 className="text-5xl font-bold mb-3">
-                Today’s Reading Set
-              </h2>
-
-              <p className="text-zinc-400 text-lg">
-                4 carefully selected CAT-style articles daily.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            {dailyArticles.map((article: any) => (
-              <Link
-                key={article.id}
-                href={article.isFree ? `/article/1` : "/pricing"}
-              >
-
-                <div className="border border-zinc-900 bg-zinc-950 rounded-3xl p-8 hover:border-zinc-700 transition cursor-pointer h-full">
-
-                  <div className="flex items-center gap-3 mb-5">
-
-                    <span className="text-sm px-3 py-1 bg-zinc-900 rounded-full text-zinc-300">
-                      {article.category}
-                    </span>
-
-                    <span className="text-sm text-zinc-500">
-                      {article.readTime}
-                    </span>
-
-                    {article.isFree ? (
-                      <span className="text-xs bg-green-900 text-green-300 px-3 py-1 rounded-full">
-                        FREE
-                      </span>
-                    ) : (
-                      <span className="text-xs bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full">
-                        PREMIUM
-                      </span>
-                    )}
-
-                  </div>
-
-                  <h3 className="text-3xl font-semibold leading-snug mb-6">
-                    {article.title}
-                  </h3>
-
-                  <div className="flex items-center justify-between">
-
-                    <span className="text-zinc-400">
-                      Difficulty: {article.difficulty}
-                    </span>
-
-                    {article.isFree ? (
-                      <span className="text-white">
-                        Read →
-                      </span>
-                    ) : (
-                      <span className="text-yellow-400">
-                        Premium Only
-                      </span>
-                    )}
-
-                  </div>
-
-                </div>
-
-              </Link>
-            ))}
 
           </div>
 
         </div>
-      </section>
+
+        {/* FEATURES */}
+
+        <div className="grid md:grid-cols-3 gap-8">
+
+          <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+
+            <h2 className="text-2xl font-bold mb-4">
+              Daily RC Practice
+            </h2>
+
+            <p className="text-zinc-400 leading-8">
+              Build consistency with carefully selected CAT-level reading passages every day.
+            </p>
+
+          </div>
+
+          <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+
+            <h2 className="text-2xl font-bold mb-4">
+              Deep Analysis
+            </h2>
+
+            <p className="text-zinc-400 leading-8">
+              Understand paragraph flow, author tone, central ideas, and inference patterns.
+            </p>
+
+          </div>
+
+          <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+
+            <h2 className="text-2xl font-bold mb-4">
+              CAT-Focused
+            </h2>
+
+            <p className="text-zinc-400 leading-8">
+              Designed specifically for CAT aspirants preparing for VARC and RC sections.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </main>
   );
