@@ -3,57 +3,79 @@ import { articles } from "@/data/articles";
 
 export default function LibraryPage() {
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-16">
-      <div className="max-w-6xl mx-auto">
+    <main className="min-h-screen bg-black text-white px-6 py-14">
 
-        <h1 className="text-6xl font-bold mb-4">
-          Reading Library
-        </h1>
+      <div className="max-w-7xl mx-auto">
 
-        <p className="text-zinc-400 text-xl mb-14">
-          Curated CAT-style reading passages designed to improve
-          comprehension, focus, and reading stamina.
-        </p>
+        {/* HEADER */}
+        <div className="mb-14">
 
-        <div className="grid md:grid-cols-2 gap-6">
+          <p className="text-zinc-500 uppercase tracking-[0.3em] mb-4">
+            Articles Daily+
+          </p>
+
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+            Reading Library
+          </h1>
+
+          <p className="text-zinc-400 text-xl max-w-3xl leading-9">
+            Carefully curated CAT-style reading passages designed
+            to improve comprehension, inference ability, tone
+            detection, and analytical reading skills.
+          </p>
+
+        </div>
+
+        {/* ARTICLES GRID */}
+        <div className="grid md:grid-cols-2 gap-8">
 
           {articles.map((article) => (
+
             <Link
               key={article.id}
               href={`/article/${article.id}`}
+              className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-zinc-600 transition-all duration-300"
             >
-              <div className="border border-zinc-900 bg-zinc-950 rounded-3xl p-8 hover:border-zinc-700 transition cursor-pointer">
 
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-sm px-3 py-1 bg-zinc-900 rounded-full text-zinc-300">
-                    {article.category}
-                  </span>
+              {/* TOP ROW */}
+              <div className="flex items-center justify-between mb-6">
 
-                  <span className="text-sm text-zinc-500">
-                    {article.readTime}
-                  </span>
-                </div>
+                <span className="text-sm text-zinc-500 uppercase tracking-wider">
+                  {article.category}
+                </span>
 
-                <h2 className="text-3xl font-semibold leading-snug mb-6">
-                  {article.title}
-                </h2>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-zinc-400">
-                    Difficulty: {article.difficulty}
-                  </span>
-
-                  <span className="text-white">
-                    Read →
-                  </span>
-                </div>
+                <span className="text-sm text-zinc-500">
+                  {article.readTime}
+                </span>
 
               </div>
+
+              {/* TITLE */}
+              <h2 className="text-3xl font-semibold leading-snug mb-8">
+                {article.title}
+              </h2>
+
+              {/* BOTTOM ROW */}
+              <div className="flex items-center justify-between">
+
+                <span className="text-zinc-400">
+                  Premium CAT Reading
+                </span>
+
+                <span className="text-white">
+                  Read →
+                </span>
+
+              </div>
+
             </Link>
+
           ))}
 
         </div>
+
       </div>
+
     </main>
   );
 }
