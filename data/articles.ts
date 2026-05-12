@@ -6,74 +6,134 @@ export const articles = [
 
     category: "Psychology",
 
-    readTime: "6 min read",
+    readTime: "5 min read",
 
     premium: false,
 
-    tone: "Analytical and reflective",
-
-    centralIdea:
-      "The article explores how delayed gratification shapes long-term success and emotional resilience.",
-
-    paragraphInsights: [
-      "Delayed gratification predicts future success.",
-      "Self-control requires emotional maturity.",
-      "Digital environments weaken patience thresholds.",
-      "Long-term focus remains socially rewarded.",
-      "Understanding patience is easier than practicing it."
-    ],
+    difficulty: "Medium",
 
     content: `
-Delayed gratification has long been considered one of the strongest predictors of future success. The ability to sacrifice immediate pleasure for long-term rewards often separates individuals who achieve sustained growth from those trapped in cycles of short-term decision making.
+Delayed gratification has long been considered one of the strongest predictors of future success.
 
-Psychologists studying human behavior frequently observe that patience is not simply a moral virtue but a strategic advantage. Individuals capable of waiting often make better financial decisions, maintain healthier lifestyles, and demonstrate stronger emotional regulation under stress.
+The ability to resist immediate pleasure in favor of long-term rewards requires not only discipline but also psychological maturity.
 
-Modern technology, however, has fundamentally altered humanity’s relationship with patience. Social media platforms, instant entertainment, and rapid digital stimulation continuously train the brain to seek immediate rewards. As a result, attention spans shrink while tolerance for discomfort weakens.
+Researchers argue that modern digital environments have weakened patience thresholds through constant stimulation and instant entertainment.
 
-This cultural shift creates an unusual paradox. Societies continue rewarding discipline, deep work, and long-term thinking, yet the environments individuals inhabit increasingly encourage distraction and impulsive behavior. The conflict between these two forces creates rising psychological tension.
+Social media platforms, rapid content consumption, and algorithm-driven dopamine loops have fundamentally altered human attention spans.
 
-Researchers argue that the challenge is no longer understanding the value of patience but preserving the ability to practice it consistently. Most individuals intellectually recognize the importance of discipline, yet struggle emotionally when confronted with delayed outcomes.
+As a result, individuals increasingly struggle with sustained focus, long-term planning, and deep intellectual engagement.
 
-Ultimately, delayed gratification represents more than self-control. It reflects an individual's capacity to align present behavior with future identity. In many ways, patience becomes an act of belief — confidence that future rewards justify present sacrifice.
-`
+Yet societies continue to reward those capable of sustained focus and long-term effort.
+
+Students preparing for competitive examinations, entrepreneurs building businesses, and athletes pursuing mastery all rely heavily on delayed gratification.
+
+The paradox is that while most individuals intellectually understand the value of patience, far fewer possess the emotional resilience required to practice it consistently.
+
+Psychologists suggest that delayed gratification is not a fixed personality trait but a trainable cognitive skill.
+
+Habits such as structured routines, meditation, deep work, and intentional discomfort can gradually improve an individual's ability to resist impulsive behavior.
+
+Ultimately, delayed gratification may represent one of the defining psychological battles of the modern era.
+`,
+
+    authorTone: "Analytical and reflective",
+
+    centralIdea:
+      "The passage explores how delayed gratification influences long-term success and why modern environments weaken human patience.",
+
+    paragraphInsights: [
+      {
+        paragraph: 1,
+        idea:
+          "Delayed gratification is closely associated with future achievement.",
+      },
+
+      {
+        paragraph: 2,
+        idea:
+          "Modern technology and entertainment reduce patience and focus.",
+      },
+
+      {
+        paragraph: 3,
+        idea:
+          "Successful individuals rely heavily on long-term discipline.",
+      },
+
+      {
+        paragraph: 4,
+        idea:
+          "Delayed gratification can be developed through conscious practice.",
+      },
+    ],
   },
 
   {
     id: 2,
 
-    title: "Why Modern Attention Spans Are Collapsing",
+    title: "Why Deep Reading Is Disappearing",
 
-    category: "Society",
+    category: "Education",
 
-    readTime: "7 min read",
+    readTime: "6 min read",
 
-    premium: true,
+    premium: false,
 
-    tone: "Critical and analytical",
-
-    centralIdea:
-      "The article examines how digital systems systematically reduce human attention spans.",
-
-    paragraphInsights: [
-      "Attention has become economically valuable.",
-      "Apps compete aggressively for engagement.",
-      "Constant stimulation weakens concentration.",
-      "Deep reading habits are disappearing.",
-      "Mental discipline is becoming rare."
-    ],
+    difficulty: "Medium",
 
     content: `
-Human attention has become one of the most valuable economic resources of the digital age. Technology companies compete aggressively to maximize engagement because longer screen time directly increases advertising revenue and platform dominance.
+Deep reading once represented the foundation of intellectual culture.
 
-The architecture of modern applications intentionally encourages repetitive behavior. Notifications, infinite scrolling, algorithmic recommendations, and rapid content cycles create continuous stimulation that keeps users psychologically attached to screens.
+Readers engaged with long-form arguments, abstract ideas, and nuanced philosophical debates over extended periods of concentration.
 
-Over time, this environment alters cognitive behavior. Many individuals now struggle to focus on long-form reading, deep analysis, or extended intellectual effort. Concentration increasingly feels uncomfortable because the brain becomes conditioned to constant novelty.
+However, digital media ecosystems have increasingly encouraged fragmented consumption patterns.
 
-Educational institutions have also begun observing these shifts. Students often consume information rapidly but retain less understanding. Reading endurance declines while dependency on visual stimulation increases across age groups.
+Instead of reading deeply, individuals now skim rapidly across headlines, notifications, short-form videos, and endless feeds.
 
-The broader consequence extends beyond productivity. Reduced attention weakens reflection, critical thinking, and emotional depth. Individuals consume enormous amounts of information while spending less time processing meaningfully.
+This behavioral shift has consequences beyond mere information consumption.
 
-As a result, the ability to maintain focus may soon become a competitive advantage. In a distracted world, sustained concentration is transforming into a rare and valuable skill.
-`
-  }
+Scholars argue that deep reading develops empathy, critical reasoning, memory retention, and conceptual synthesis.
+
+Without deep reading habits, individuals may struggle to process complexity or tolerate ambiguity in intellectual discussions.
+
+The educational implications are especially significant.
+
+Students raised primarily on rapid digital content often find it difficult to sustain concentration during academic reading tasks.
+
+As educational systems become increasingly digitized, preserving deep reading habits may become both culturally and cognitively essential.
+
+The challenge of the future may not be access to information, but the ability to engage with it meaningfully.
+`,
+
+    authorTone: "Critical and intellectual",
+
+    centralIdea:
+      "The article argues that digital culture is weakening deep reading habits and reducing cognitive depth.",
+
+    paragraphInsights: [
+      {
+        paragraph: 1,
+        idea:
+          "Deep reading historically shaped intellectual development.",
+      },
+
+      {
+        paragraph: 2,
+        idea:
+          "Digital media promotes fragmented attention patterns.",
+      },
+
+      {
+        paragraph: 3,
+        idea:
+          "Deep reading improves reasoning and empathy.",
+      },
+
+      {
+        paragraph: 4,
+        idea:
+          "Preserving deep reading may become increasingly important.",
+      },
+    ],
+  },
 ];

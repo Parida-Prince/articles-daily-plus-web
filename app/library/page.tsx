@@ -1,77 +1,93 @@
-import Link from "next/link";
 import { articles } from "@/data/articles";
 
-export default function LibraryPage() {
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+
+  const article = articles.find(
+    (a) => a.id.toString() === id
+  );
+
+  if (!article) {
+    return (
+      <main className="min-h-screen bg-black text-white p-10">
+        <h1 className="text-5xl font-bold">
+          Article not found.
+        </h1>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-black text-white px-6 py-16">
+      <div className="max-w-5xl mx-auto">
 
-      <div className="max-w-6xl mx-auto">
+        <p className="text-zinc-400 mb-4">
+          {article.category}
+        </p>
 
-        <div className="mb-16">
+        <h1 className="text-6xl font-bold leading-tight mb-10">
+          {article.title}
+        </h1>
 
-          <p className="text-zinc-500 uppercase tracking-[0.3em] mb-4">
-            Reading Library
-          </p>
+        <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 text-xl leading-10 text-zinc-200 whitespace-pre-line">
+          {article.content}
+        </div>
 
-          <h1 className="text-6xl font-bold leading-tight mb-6">
-            CAT Reading Library
-          </h1>
+        <div className="grid md:grid-cols-2 gap-6 mt-12">
 
-          <p className="text-zinc-400 text-xl max-w-3xl leading-9">
-            Improve comprehension, tone detection, inference skills,
-            and reading endurance using carefully curated CAT-style passages.
-          </p>
+          <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+            <h2 className="text-3xl font-bold mb-4">
+              Author Tone
+            </h2>
+
+            <p className="text-zinc-300 text-lg">
+              {article.authorTone}
+            </p>
+          </div>
+
+          <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+            <h2 className="text-3xl font-bold mb-4">
+              Central Idea
+            </h2>
+
+            <p className="text-zinc-300 text-lg">
+              {article.centralIdea}
+            </p>
+          </div>
 
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="mt-12 bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
 
-          {articles.map((article) => (
+          <h2 className="text-3xl font-bold mb-8">
+            Paragraph-wise Main Ideas
+          </h2>
 
-            <Link
-              key={article.id}
-              href={`/article/${article.id}`}
-              className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-zinc-600 transition block"
-            >
+          <div className="space-y-6">
 
-              <div className="flex items-center justify-between mb-6">
+            {article.paragraphInsights.map((item, index) => (
+              <div
+                key={index}
+                className="border border-zinc-800 rounded-2xl p-6"
+              >
+                <h3 className="text-xl font-semibold mb-2">
+                  Paragraph {item.paragraph}
+                </h3>
 
-                <span className="text-zinc-500 uppercase tracking-widest text-sm">
-                  {article.category}
-                </span>
-
-                {article.premium && (
-                  <span className="text-yellow-400 text-sm">
-                    Premium
-                  </span>
-                )}
-
+                <p className="text-zinc-300 leading-8">
+                  {item.idea}
+                </p>
               </div>
+            ))}
 
-              <h2 className="text-3xl font-semibold leading-snug mb-6">
-                {article.title}
-              </h2>
-
-              <div className="flex items-center justify-between">
-
-                <span className="text-zinc-500 text-sm">
-                  {article.readTime}
-                </span>
-
-                <span className="text-white">
-                  Read →
-                </span>
-
-              </div>
-
-            </Link>
-
-          ))}
-
+          </div>
         </div>
 
       </div>
-
     </main>
   );
 }

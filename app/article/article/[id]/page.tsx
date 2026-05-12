@@ -1,15 +1,14 @@
 import { articles } from "@/data/articles";
 
-export default function ArticlePage({
+export default async function ArticlePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-
-  const articleId = parseInt(params.id);
+  const { id } = await params;
 
   const article = articles.find(
-    (item) => item.id === articleId
+    (a) => a.id.toString() === id
   );
 
   if (!article) {
@@ -23,11 +22,10 @@ export default function ArticlePage({
   }
 
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-14">
+    <main className="min-h-screen bg-black text-white px-6 py-16">
+      <div className="max-w-5xl mx-auto">
 
-      <div className="max-w-4xl mx-auto">
-
-        <p className="text-zinc-500 uppercase tracking-[0.3em] mb-4">
+        <p className="text-zinc-400 mb-4">
           {article.category}
         </p>
 
@@ -35,73 +33,64 @@ export default function ArticlePage({
           {article.title}
         </h1>
 
-        <div className="text-zinc-400 mb-10">
-          {article.readTime}
-        </div>
-
-        <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 whitespace-pre-line text-xl leading-10 text-zinc-200">
-
+        <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 text-xl leading-10 text-zinc-200 whitespace-pre-line">
           {article.content}
-
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-14">
+        <div className="grid md:grid-cols-2 gap-6 mt-12">
 
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-6">
+            <h2 className="text-3xl font-bold mb-4">
               Author Tone
             </h2>
 
-            <p className="text-zinc-300 text-lg leading-8">
-              {article.tone}
+            <p className="text-zinc-300 text-lg">
+              {article.authorTone}
             </p>
           </div>
 
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-6">
+            <h2 className="text-3xl font-bold mb-4">
               Central Idea
             </h2>
 
-            <p className="text-zinc-300 text-lg leading-8">
+            <p className="text-zinc-300 text-lg">
               {article.centralIdea}
             </p>
           </div>
 
         </div>
 
-        <div className="mt-16">
+        <div className="mt-12 bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
 
-          <h2 className="text-4xl font-bold mb-10">
+          <h2 className="text-3xl font-bold mb-8">
             Paragraph-wise Main Ideas
           </h2>
 
           <div className="space-y-6">
 
-            {article.paragraphInsights.map((point, index) => (
+            {article.paragraphInsights.map(
+              (item: any, index: number) => (
+                <div
+                  key={index}
+                  className="border border-zinc-800 rounded-2xl p-6"
+                >
+                  <h3 className="text-xl font-semibold mb-2">
+                    Paragraph {item.paragraph}
+                  </h3>
 
-              <div
-                key={index}
-                className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6"
-              >
-
-                <h3 className="text-2xl font-semibold mb-3">
-                  Paragraph {index + 1}
-                </h3>
-
-                <p className="text-zinc-300 leading-8 text-lg">
-                  {point}
-                </p>
-
-              </div>
-
-            ))}
+                  <p className="text-zinc-300 leading-8">
+                    {item.idea}
+                  </p>
+                </div>
+              )
+            )}
 
           </div>
 
         </div>
 
       </div>
-
     </main>
   );
 }
