@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { dailyArticles } from "@/data/daily";
+import { dailyArticles } from "../data/daily";
 
 export default function HomePage() {
   return (
@@ -56,7 +56,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-6">
 
-            {dailyArticles.map((article) => (
+            {dailyArticles.map((article: any) => (
               <div
                 key={article.id}
                 className="border border-zinc-900 bg-zinc-950 rounded-3xl p-8"
