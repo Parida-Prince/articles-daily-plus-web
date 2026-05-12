@@ -57,56 +57,60 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-6">
 
             {dailyArticles.map((article: any) => (
-              <div
+              <Link
                 key={article.id}
-                className="border border-zinc-900 bg-zinc-950 rounded-3xl p-8"
+                href={article.isFree ? `/article/1` : "/pricing"}
               >
 
-                <div className="flex items-center gap-3 mb-5">
+                <div className="border border-zinc-900 bg-zinc-950 rounded-3xl p-8 hover:border-zinc-700 transition cursor-pointer h-full">
 
-                  <span className="text-sm px-3 py-1 bg-zinc-900 rounded-full text-zinc-300">
-                    {article.category}
-                  </span>
+                  <div className="flex items-center gap-3 mb-5">
 
-                  <span className="text-sm text-zinc-500">
-                    {article.readTime}
-                  </span>
-
-                  {article.isFree ? (
-                    <span className="text-xs bg-green-900 text-green-300 px-3 py-1 rounded-full">
-                      FREE
+                    <span className="text-sm px-3 py-1 bg-zinc-900 rounded-full text-zinc-300">
+                      {article.category}
                     </span>
-                  ) : (
-                    <span className="text-xs bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full">
-                      PREMIUM
+
+                    <span className="text-sm text-zinc-500">
+                      {article.readTime}
                     </span>
-                  )}
+
+                    {article.isFree ? (
+                      <span className="text-xs bg-green-900 text-green-300 px-3 py-1 rounded-full">
+                        FREE
+                      </span>
+                    ) : (
+                      <span className="text-xs bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full">
+                        PREMIUM
+                      </span>
+                    )}
+
+                  </div>
+
+                  <h3 className="text-3xl font-semibold leading-snug mb-6">
+                    {article.title}
+                  </h3>
+
+                  <div className="flex items-center justify-between">
+
+                    <span className="text-zinc-400">
+                      Difficulty: {article.difficulty}
+                    </span>
+
+                    {article.isFree ? (
+                      <span className="text-white">
+                        Read →
+                      </span>
+                    ) : (
+                      <span className="text-yellow-400">
+                        Premium Only
+                      </span>
+                    )}
+
+                  </div>
 
                 </div>
 
-                <h3 className="text-3xl font-semibold leading-snug mb-6">
-                  {article.title}
-                </h3>
-
-                <div className="flex items-center justify-between">
-
-                  <span className="text-zinc-400">
-                    Difficulty: {article.difficulty}
-                  </span>
-
-                  {article.isFree ? (
-                    <button className="text-white">
-                      Read →
-                    </button>
-                  ) : (
-                    <button className="text-yellow-400">
-                      Premium Only
-                    </button>
-                  )}
-
-                </div>
-
-              </div>
+              </Link>
             ))}
 
           </div>
