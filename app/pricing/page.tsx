@@ -1,264 +1,91 @@
-"use client";
-
 export default function PricingPage() {
-
   return (
+    <main className="min-h-screen bg-black text-white px-6 py-16">
 
-    <main className="min-h-screen bg-black text-white px-6 py-24">
+      <div className="max-w-5xl mx-auto text-center">
 
-      <div className="max-w-7xl mx-auto">
+        <h1 className="text-6xl font-bold mb-6">
+          Upgrade Your Reading
+        </h1>
 
-        {/* HEADER */}
+        <p className="text-zinc-400 text-xl mb-16">
+          Daily CAT-style passages with deep analysis, paragraph insights,
+          author tone breakdowns, and premium reading practice.
+        </p>
 
-        <div className="text-center mb-24">
+        <div className="grid md:grid-cols-2 gap-10">
 
-          <div className="inline-block px-5 py-2 rounded-full border border-zinc-800 text-zinc-400 text-sm mb-8">
+          {/* FREE PLAN */}
 
-            Simple Pricing
+          <div className="border border-zinc-800 rounded-3xl p-10 bg-zinc-950">
 
-          </div>
-
-          <h1 className="text-7xl md:text-8xl font-bold tracking-tight leading-none mb-8">
-
-            Build Your Daily Reading Habit.
-
-          </h1>
-
-          <p className="text-zinc-400 text-2xl leading-relaxed max-w-3xl mx-auto">
-
-            Articles Daily+ helps CAT aspirants improve
-            comprehension, reading stamina,
-            and genre familiarity through structured daily reading.
-
-          </p>
-
-        </div>
-
-        {/* PLANS */}
-
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-
-          {/* FREE */}
-
-          <div className="bg-zinc-950 border border-zinc-800 rounded-[36px] p-10">
-
-            <div className="text-zinc-500 uppercase tracking-[0.2em] text-sm mb-6">
-
+            <h2 className="text-3xl font-bold mb-4">
               Free
-
-            </div>
-
-            <h2 className="text-5xl font-bold mb-8">
-
-              ₹0
-
             </h2>
 
-            <div className="space-y-5 mb-12 text-zinc-300">
+            <p className="text-5xl font-bold mb-8">
+              ₹0
+            </p>
 
-              <div>✓ 1 article daily</div>
+            <ul className="space-y-4 text-zinc-300 mb-10 text-left">
+              <li>✓ 1 free article daily</li>
+              <li>✓ CAT-level passages</li>
+              <li>✓ Basic reading practice</li>
+            </ul>
 
-              <div>✓ Basic reading insights</div>
-
-              <div>✓ Genre-based reading</div>
-
-              <div>✓ Reading streak tracking</div>
-
-            </div>
-
-            <button className="w-full py-4 rounded-full border border-zinc-700 text-white font-semibold">
-
+            <button className="w-full border border-zinc-700 py-4 rounded-full">
               Current Plan
-
             </button>
 
           </div>
 
-          {/* WEEKLY */}
+          {/* PREMIUM PLAN */}
 
-          <div className="bg-zinc-950 border border-zinc-800 rounded-[36px] p-10 relative">
+          <div className="border border-white rounded-3xl p-10 bg-white text-black">
 
-            <div className="absolute top-5 right-5 bg-zinc-800 text-white px-3 py-1 rounded-full text-xs font-semibold">
-
-              QUICK START
-
-            </div>
-
-            <div className="text-zinc-500 uppercase tracking-[0.2em] text-sm mb-6">
-
-              Weekly Pass
-
-            </div>
-
-            <div className="flex items-end gap-2 mb-8">
-
-              <h2 className="text-5xl font-bold">
-
-                ₹29
-
-              </h2>
-
-              <div className="text-zinc-500 mb-1">
-
-                /7 days
-
-              </div>
-
-            </div>
-
-            <div className="space-y-5 mb-12 text-zinc-300">
-
-              <div>✓ 4 articles daily</div>
-
-              <div>✓ Unlimited reading access</div>
-
-              <div>✓ All genres unlocked</div>
-
-              <div>✓ Reading insights access</div>
-
-            </div>
-
-            <a
-              href="https://rzp.io/"
-              target="_blank"
-              className="block w-full py-4 rounded-full bg-white text-black text-center font-semibold hover:scale-[1.02] transition"
-            >
-
-              Get Weekly Pass
-
-            </a>
-
-          </div>
-
-          {/* MONTHLY */}
-
-          <div className="bg-white text-black rounded-[36px] p-10 relative overflow-hidden">
-
-            <div className="absolute top-5 right-5 bg-black text-white px-3 py-1 rounded-full text-xs font-semibold">
-
+            <div className="mb-4 inline-block bg-black text-white px-4 py-1 rounded-full text-sm">
               MOST POPULAR
-
             </div>
 
-            <div className="uppercase tracking-[0.2em] text-sm mb-6 opacity-70">
-
+            <h2 className="text-3xl font-bold mb-4">
               Premium
+            </h2>
 
-            </div>
-
-            <div className="flex items-end gap-2 mb-8">
-
-              <h2 className="text-5xl font-bold">
-
-                ₹99
-
-              </h2>
-
-              <div className="opacity-70 mb-1">
-
+            <p className="text-5xl font-bold mb-8">
+              ₹99
+              <span className="text-lg font-normal">
                 /month
+              </span>
+            </p>
 
-              </div>
-
-            </div>
-
-            <div className="space-y-5 mb-12 opacity-80">
-
-              <div>✓ 4 curated articles daily</div>
-
-              <div>✓ Full archive access</div>
-
-              <div>✓ Advanced reading insights</div>
-
-              <div>✓ All genres unlocked</div>
-
-              <div>✓ Daily reading habit system</div>
-
-            </div>
+            <ul className="space-y-4 mb-10 text-left">
+              <li>✓ 4 premium CAT articles daily</li>
+              <li>✓ 500–600 word RC passages</li>
+              <li>✓ Paragraph-wise main ideas</li>
+              <li>✓ Author tone analysis</li>
+              <li>✓ CAT RC style structure</li>
+              <li>✓ Difficulty analysis</li>
+              <li>✓ Daily reading streak system</li>
+            </ul>
 
             <a
-              href="https://rzp.io/"
+              href="https://t.me/astiflingsoul"
               target="_blank"
-              className="block w-full py-4 rounded-full bg-black text-white text-center font-semibold hover:scale-[1.02] transition"
+              className="block w-full bg-black text-white py-4 rounded-full font-semibold text-center hover:opacity-90 transition"
             >
-
-              Upgrade Now
-
-            </a>
-
-          </div>
-
-          {/* 2 MONTH */}
-
-          <div className="bg-zinc-950 border border-zinc-800 rounded-[36px] p-10 relative">
-
-            <div className="absolute top-5 right-5 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
-
-              BEST VALUE
-
-            </div>
-
-            <div className="text-zinc-500 uppercase tracking-[0.2em] text-sm mb-6">
-
-              Focus Plan
-
-            </div>
-
-            <div className="flex items-end gap-2 mb-8">
-
-              <h2 className="text-5xl font-bold">
-
-                ₹149
-
-              </h2>
-
-              <div className="text-zinc-500 mb-1">
-
-                /2 months
-
-              </div>
-
-            </div>
-
-            <div className="space-y-5 mb-12 text-zinc-300">
-
-              <div>✓ 4 curated articles daily</div>
-
-              <div>✓ Unlimited archive access</div>
-
-              <div>✓ Premium reading insights</div>
-
-              <div>✓ Genre mastery training</div>
-
-              <div>✓ Long-term reading consistency</div>
-
-            </div>
-
-            <a
-              href="https://rzp.io/"
-              target="_blank"
-              className="block w-full py-4 rounded-full bg-white text-black text-center font-semibold hover:scale-[1.02] transition"
-            >
-
-              Start Focus Plan
-
+              Contact on Telegram
             </a>
 
           </div>
 
         </div>
 
-        {/* FOOTER */}
-
-        <div className="text-center mt-24 text-zinc-500">
-
-          Articles Daily+ • Curated CAT Reading Platform
-
+        <div className="mt-16 text-zinc-500 text-sm">
+          After payment, premium access will be activated manually within a few minutes.
         </div>
 
       </div>
 
     </main>
-
   );
 }
