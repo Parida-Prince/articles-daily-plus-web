@@ -13,11 +13,11 @@ export default function PricingPage() {
           author tone breakdowns, and structured comprehension practice.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
 
           {/* FREE */}
 
-          <div className="border border-zinc-800 rounded-3xl p-10 bg-zinc-950">
+          <div className="border border-zinc-800 rounded-3xl p-8 bg-zinc-950">
 
             <h2 className="text-3xl font-bold mb-4">
               Free
@@ -42,7 +42,7 @@ export default function PricingPage() {
 
           {/* WEEKLY */}
 
-          <div className="border border-zinc-800 rounded-3xl p-10 bg-zinc-950">
+          <div className="border border-zinc-800 rounded-3xl p-8 bg-zinc-950">
 
             <div className="mb-4 inline-block bg-zinc-800 text-white px-4 py-1 rounded-full text-sm">
               STARTER
@@ -79,18 +79,18 @@ export default function PricingPage() {
 
           {/* MONTHLY */}
 
-          <div className="border border-white rounded-3xl p-10 bg-white text-black">
+          <div className="border border-white rounded-3xl p-8 bg-white text-black">
 
             <div className="mb-4 inline-block bg-black text-white px-4 py-1 rounded-full text-sm">
               MOST POPULAR
             </div>
 
             <h2 className="text-3xl font-bold mb-4">
-              Premium
+              Monthly
             </h2>
 
             <p className="text-5xl font-bold mb-8">
-              ₹149
+              ₹99
               <span className="text-lg font-normal">
                 /month
               </span>
@@ -104,7 +104,6 @@ export default function PricingPage() {
               <li>✓ CAT RC style structure</li>
               <li>✓ Difficulty analysis</li>
               <li>✓ Daily reading streak system</li>
-              <li>✓ Full premium library access</li>
             </ul>
 
             <a
@@ -112,7 +111,44 @@ export default function PricingPage() {
               target="_blank"
               className="block w-full bg-black text-white py-4 rounded-full font-semibold text-center hover:opacity-90 transition"
             >
-              Get Premium Access
+              Get Monthly Access
+            </a>
+
+          </div>
+
+          {/* 2 MONTHS */}
+
+          <div className="border border-zinc-800 rounded-3xl p-8 bg-zinc-950">
+
+            <div className="mb-4 inline-block bg-green-900 text-green-300 px-4 py-1 rounded-full text-sm">
+              BEST VALUE
+            </div>
+
+            <h2 className="text-3xl font-bold mb-4">
+              2 Months
+            </h2>
+
+            <p className="text-5xl font-bold mb-8">
+              ₹149
+              <span className="text-lg font-normal text-zinc-400">
+                /2 months
+              </span>
+            </p>
+
+            <ul className="space-y-4 text-zinc-300 mb-10 text-left">
+              <li>✓ Everything in Monthly</li>
+              <li>✓ Full premium article archive</li>
+              <li>✓ Long-term reading consistency</li>
+              <li>✓ Best value pricing</li>
+              <li>✓ Priority premium access</li>
+            </ul>
+
+            <a
+              href="https://t.me/astiflingsoul"
+              target="_blank"
+              className="block w-full bg-green-500 text-black py-4 rounded-full font-semibold text-center hover:opacity-90 transition"
+            >
+              Get 2-Month Access
             </a>
 
           </div>
