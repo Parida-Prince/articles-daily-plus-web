@@ -6,8 +6,10 @@ export default function ArticlePage({
   params: { id: string };
 }) {
 
+  const articleId = parseInt(params.id);
+
   const article = articles.find(
-    (a) => a.id === Number(params.id)
+    (item) => item.id === articleId
   );
 
   if (!article) {
@@ -25,29 +27,24 @@ export default function ArticlePage({
 
       <div className="max-w-4xl mx-auto">
 
-        {/* CATEGORY */}
-        <p className="text-zinc-500 uppercase tracking-[0.3em] mb-6">
+        <p className="text-zinc-500 uppercase tracking-[0.3em] mb-4">
           {article.category}
         </p>
 
-        {/* TITLE */}
-        <h1 className="text-6xl font-bold leading-tight mb-8">
+        <h1 className="text-6xl font-bold leading-tight mb-10">
           {article.title}
         </h1>
 
-        {/* META */}
-        <div className="flex items-center gap-6 text-zinc-400 mb-14">
-          <span>{article.readTime}</span>
+        <div className="text-zinc-400 mb-10">
+          {article.readTime}
         </div>
 
-        {/* ARTICLE */}
-        <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 text-xl leading-10 text-zinc-200 whitespace-pre-line">
+        <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 whitespace-pre-line text-xl leading-10 text-zinc-200">
 
           {article.content}
 
         </div>
 
-        {/* ANALYSIS */}
         <div className="grid md:grid-cols-2 gap-8 mt-14">
 
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
@@ -72,7 +69,6 @@ export default function ArticlePage({
 
         </div>
 
-        {/* PARAGRAPH INSIGHTS */}
         <div className="mt-16">
 
           <h2 className="text-4xl font-bold mb-10">
@@ -81,7 +77,7 @@ export default function ArticlePage({
 
           <div className="space-y-6">
 
-            {article.paragraphInsights.map((item, index) => (
+            {article.paragraphInsights.map((point, index) => (
 
               <div
                 key={index}
@@ -93,7 +89,7 @@ export default function ArticlePage({
                 </h3>
 
                 <p className="text-zinc-300 leading-8 text-lg">
-                  {item}
+                  {point}
                 </p>
 
               </div>
