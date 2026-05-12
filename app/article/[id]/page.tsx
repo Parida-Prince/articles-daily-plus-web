@@ -5,14 +5,19 @@ export default function ArticlePage({
 }: {
   params: { id: string };
 }) {
+
+  const articleId = parseInt(params.id);
+
   const article = dailyArticles.find(
-    (a) => a.id === Number(params.id)
+    (item) => item.id === articleId
   );
 
   if (!article) {
     return (
       <main className="min-h-screen bg-black text-white p-10">
-        <h1 className="text-3xl font-bold">Article not found.</h1>
+        <h1 className="text-4xl font-bold">
+          Article not found.
+        </h1>
       </main>
     );
   }
@@ -21,26 +26,29 @@ export default function ArticlePage({
     <main className="min-h-screen bg-black text-white px-6 py-14">
       <div className="max-w-4xl mx-auto">
 
+        {/* TOP META */}
         <div className="mb-6">
           <span className="text-sm text-gray-400">
             {article.category} • {article.readTime}
           </span>
         </div>
 
+        {/* TITLE */}
         <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-12">
           {article.title}
         </h1>
 
-        {/* FULL ARTICLE FIRST */}
+        {/* ARTICLE */}
         <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 text-xl leading-[2.2rem] text-gray-200 whitespace-pre-line">
           {article.content}
         </div>
 
-        {/* INSIGHTS SECTION */}
+        {/* INSIGHTS */}
         <div className="mt-16 space-y-8">
 
           <div className="grid md:grid-cols-2 gap-6">
 
+            {/* AUTHOR TONE */}
             <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
               <h2 className="text-3xl font-bold mb-4">
                 Author Tone
@@ -51,6 +59,7 @@ export default function ArticlePage({
               </p>
             </div>
 
+            {/* CENTRAL IDEA */}
             <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
               <h2 className="text-3xl font-bold mb-4">
                 Central Idea
@@ -63,19 +72,22 @@ export default function ArticlePage({
 
           </div>
 
-          {/* PARA WISE MAIN IDEA */}
+          {/* PARAGRAPH WISE IDEAS */}
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+
             <h2 className="text-3xl font-bold mb-6">
               Paragraph-wise Main Ideas
             </h2>
 
             <div className="space-y-5">
+
               {article.paragraphSummary.map(
                 (point, index) => (
                   <div
                     key={index}
                     className="border border-zinc-800 rounded-2xl p-5"
                   >
+
                     <p className="text-sm text-gray-500 mb-2">
                       Paragraph {index + 1}
                     </p>
@@ -83,14 +95,17 @@ export default function ArticlePage({
                     <p className="text-lg text-gray-300">
                       {point}
                     </p>
+
                   </div>
                 )
               )}
+
             </div>
           </div>
 
           {/* CONCLUSION */}
           <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+
             <h2 className="text-3xl font-bold mb-4">
               Conclusion
             </h2>
@@ -98,6 +113,7 @@ export default function ArticlePage({
             <p className="text-lg text-gray-300 leading-8">
               {article.conclusion}
             </p>
+
           </div>
 
         </div>
