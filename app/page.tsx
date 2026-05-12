@@ -23,7 +23,7 @@ export default function HomePage() {
           </p>
 
           <div className="flex gap-4">
-            <Link href="/library">
+            <Link href="/read">
               <button className="bg-white text-black px-8 py-4 rounded-full text-lg font-medium">
                 Reading Library
               </button>
