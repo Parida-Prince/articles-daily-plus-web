@@ -1,166 +1,163 @@
+import Link from "next/link";
+
+const plans = [
+  {
+    name: "Free",
+    price: "₹0",
+    duration: "Forever",
+    features: [
+      "1 free CAT-style article daily",
+      "Reading insights",
+      "Author tone analysis",
+      "Paragraph-wise breakdown",
+    ],
+    button: "Start Free",
+    link: "/library",
+    highlight: false,
+  },
+  {
+    name: "Weekly",
+    price: "₹29",
+    duration: "7 Days",
+    features: [
+      "4 premium CAT articles daily",
+      "Full reading analysis",
+      "Central idea + tone",
+      "Daily reading habit tracking",
+    ],
+    button: "Get Weekly Access",
+    link: "https://rzp.io/rzp/expvgkmU",
+    highlight: false,
+  },
+  {
+    name: "Monthly",
+    price: "₹99",
+    duration: "30 Days",
+    features: [
+      "Unlimited premium access",
+      "4 CAT articles daily",
+      "Advanced reading insights",
+      "Premium reading library",
+      "Priority support",
+    ],
+    button: "Get Monthly Access",
+    link: "https://rzp.io/rzp/IhQefS0s",
+    highlight: true,
+  },
+  {
+    name: "2 Months",
+    price: "₹149",
+    duration: "60 Days",
+    features: [
+      "Best value plan",
+      "Full premium library access",
+      "Daily CAT RC practice",
+      "Reading analytics",
+      "All future updates included",
+    ],
+    button: "Get 2-Month Access",
+    link: "https://rzp.io/rzp/FuZrWkbG",
+    highlight: false,
+  },
+];
+
 export default function PricingPage() {
   return (
     <main className="min-h-screen bg-black text-white px-6 py-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-6xl font-bold mb-6">
+            Choose Your Reading Plan
+          </h1>
 
-      <div className="max-w-7xl mx-auto text-center">
-
-        <h1 className="text-6xl font-bold mb-6">
-          Upgrade Your Reading
-        </h1>
-
-        <p className="text-zinc-400 text-xl mb-16 max-w-3xl mx-auto">
-          Daily CAT-style passages with deep analysis, paragraph insights,
-          author tone breakdowns, and structured comprehension practice.
-        </p>
+          <p className="text-zinc-400 text-xl max-w-2xl mx-auto leading-8">
+            Build elite CAT VARC reading skills with daily curated articles,
+            deep analysis, and structured comprehension training.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-4 gap-8">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`rounded-3xl border p-8 transition-all duration-300 ${
+                plan.highlight
+                  ? "border-white bg-zinc-900 scale-105"
+                  : "border-zinc-800 bg-zinc-950"
+              }`}
+            >
+              {plan.highlight && (
+                <div className="mb-4">
+                  <span className="bg-white text-black px-3 py-1 rounded-full text-sm font-semibold">
+                    MOST POPULAR
+                  </span>
+                </div>
+              )}
 
-          {/* FREE */}
+              <h2 className="text-3xl font-bold mb-2">{plan.name}</h2>
 
-          <div className="border border-zinc-800 rounded-3xl p-8 bg-zinc-950">
+              <div className="mb-6">
+                <span className="text-5xl font-bold">{plan.price}</span>
 
-            <h2 className="text-3xl font-bold mb-4">
-              Free
-            </h2>
+                <span className="text-zinc-400 ml-2">
+                  / {plan.duration}
+                </span>
+              </div>
 
-            <p className="text-5xl font-bold mb-8">
-              ₹0
-            </p>
+              <ul className="space-y-4 mb-10">
+                {plan.features.map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="text-zinc-300 flex items-start gap-3"
+                  >
+                    <span className="text-green-400 mt-1">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
 
-            <ul className="space-y-4 text-zinc-300 mb-10 text-left">
-              <li>✓ 1 free article daily</li>
-              <li>✓ CAT-level reading</li>
-              <li>✓ Basic practice</li>
-              <li>✓ Limited access</li>
-            </ul>
+              {plan.name === "Free" ? (
+                <Link href={plan.link}>
+                  <button className="w-full bg-white text-black py-4 rounded-2xl font-semibold hover:opacity-90 transition">
+                    {plan.button}
+                  </button>
+                </Link>
+              ) : (
+                <a
+                  href={plan.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="w-full bg-white text-black py-4 rounded-2xl font-semibold hover:opacity-90 transition">
+                    {plan.button}
+                  </button>
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
 
-            <button className="w-full border border-zinc-700 py-4 rounded-full">
-              Current Plan
+        <div className="mt-20 text-center">
+          <h3 className="text-3xl font-bold mb-6">
+            Need Help After Payment?
+          </h3>
+
+          <p className="text-zinc-400 mb-6 text-lg">
+            Send your payment screenshot on Telegram and premium access will be activated.
+          </p>
+
+          <a
+            href="https://t.me/astiflingsoul"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <button className="bg-blue-500 hover:bg-blue-600 transition px-8 py-4 rounded-2xl font-semibold text-white">
+              Contact on Telegram
             </button>
-
-          </div>
-
-          {/* WEEKLY */}
-
-          <div className="border border-zinc-800 rounded-3xl p-8 bg-zinc-950">
-
-            <div className="mb-4 inline-block bg-zinc-800 text-white px-4 py-1 rounded-full text-sm">
-              STARTER
-            </div>
-
-            <h2 className="text-3xl font-bold mb-4">
-              Weekly
-            </h2>
-
-            <p className="text-5xl font-bold mb-8">
-              ₹29
-              <span className="text-lg font-normal text-zinc-400">
-                /week
-              </span>
-            </p>
-
-            <ul className="space-y-4 text-zinc-300 mb-10 text-left">
-              <li>✓ 4 premium articles daily</li>
-              <li>✓ CAT RC structure</li>
-              <li>✓ Author tone analysis</li>
-              <li>✓ Paragraph insights</li>
-              <li>✓ Reading streak access</li>
-            </ul>
-
-            <a
-              href="https://t.me/astiflingsoul"
-              target="_blank"
-              className="block w-full border border-white py-4 rounded-full font-semibold text-center hover:bg-white hover:text-black transition"
-            >
-              Get Weekly Access
-            </a>
-
-          </div>
-
-          {/* MONTHLY */}
-
-          <div className="border border-white rounded-3xl p-8 bg-white text-black">
-
-            <div className="mb-4 inline-block bg-black text-white px-4 py-1 rounded-full text-sm">
-              MOST POPULAR
-            </div>
-
-            <h2 className="text-3xl font-bold mb-4">
-              Monthly
-            </h2>
-
-            <p className="text-5xl font-bold mb-8">
-              ₹99
-              <span className="text-lg font-normal">
-                /month
-              </span>
-            </p>
-
-            <ul className="space-y-4 mb-10 text-left">
-              <li>✓ 4 premium CAT articles daily</li>
-              <li>✓ 500–600 word RC passages</li>
-              <li>✓ Paragraph-wise main ideas</li>
-              <li>✓ Author tone analysis</li>
-              <li>✓ CAT RC style structure</li>
-              <li>✓ Difficulty analysis</li>
-              <li>✓ Daily reading streak system</li>
-            </ul>
-
-            <a
-              href="https://t.me/astiflingsoul"
-              target="_blank"
-              className="block w-full bg-black text-white py-4 rounded-full font-semibold text-center hover:opacity-90 transition"
-            >
-              Get Monthly Access
-            </a>
-
-          </div>
-
-          {/* 2 MONTHS */}
-
-          <div className="border border-zinc-800 rounded-3xl p-8 bg-zinc-950">
-
-            <div className="mb-4 inline-block bg-green-900 text-green-300 px-4 py-1 rounded-full text-sm">
-              BEST VALUE
-            </div>
-
-            <h2 className="text-3xl font-bold mb-4">
-              2 Months
-            </h2>
-
-            <p className="text-5xl font-bold mb-8">
-              ₹149
-              <span className="text-lg font-normal text-zinc-400">
-                /2 months
-              </span>
-            </p>
-
-            <ul className="space-y-4 text-zinc-300 mb-10 text-left">
-              <li>✓ Everything in Monthly</li>
-              <li>✓ Full premium article archive</li>
-              <li>✓ Long-term reading consistency</li>
-              <li>✓ Best value pricing</li>
-              <li>✓ Priority premium access</li>
-            </ul>
-
-            <a
-              href="https://t.me/astiflingsoul"
-              target="_blank"
-              className="block w-full bg-green-500 text-black py-4 rounded-full font-semibold text-center hover:opacity-90 transition"
-            >
-              Get 2-Month Access
-            </a>
-
-          </div>
-
+          </a>
         </div>
-
-        <div className="mt-16 text-zinc-500 text-sm">
-          After payment, premium access will be activated manually within a few minutes via Telegram.
-        </div>
-
       </div>
-
     </main>
   );
 }
