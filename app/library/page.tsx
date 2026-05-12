@@ -1,35 +1,5 @@
 import Link from "next/link";
-
-const articles = [
-  {
-    id: 1,
-    title: "The Psychology of Delayed Gratification",
-    category: "Psychology",
-    readTime: "8 min read",
-    difficulty: "Moderate",
-  },
-  {
-    id: 2,
-    title: "Why Civilizations Collapse Slowly",
-    category: "History",
-    readTime: "10 min read",
-    difficulty: "Difficult",
-  },
-  {
-    id: 3,
-    title: "Attention Spans in the Digital Age",
-    category: "Technology",
-    readTime: "7 min read",
-    difficulty: "Easy",
-  },
-  {
-    id: 4,
-    title: "The Economic Logic of Luxury Brands",
-    category: "Economics",
-    readTime: "9 min read",
-    difficulty: "Moderate",
-  },
-];
+import { articles } from "@/data/articles";
 
 export default function LibraryPage() {
   return (
